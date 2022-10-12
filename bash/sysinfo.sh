@@ -1,9 +1,15 @@
-#! /bin/bash
-#command to go in the bash directory 
-hostname -f
-#helps differntiate device within the local network
-hostnamectl
-# changes the system hostname and related setting 
-hostname - |
-#helps differntiate device within the local network
-df -h | grep -w/
+#!/bin/bash
+
+echo -e "report for myvm"
+echo ===============
+echo -e "fqdn:\t\t"`hostname --fqdn` 
+#to find fqdn
+echo -e `hostnamectl | grep "Operating System"`
+#to find the name and version of OS
+echo -e "System Main IP:\t\t"`hostname -I` 
+#find the ip address of device
+echo -e "Root Filesystem Free Space:\t\t" `df -h /root` 
+#to find free disk space
+echo ===============
+
+
